@@ -1,0 +1,7 @@
+[package]
+aliases = zeek-log-all-http-headers
+description = Add all HTTP headers and values to the HTTP log.
+tags = http
+depends = zkg >=2.0.7
+version = 1.0.0
+script_dir = scripts
