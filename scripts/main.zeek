@@ -37,12 +37,12 @@ event http_header(c: connection, is_orig: bool, name: string, value: string) &pr
 			if ( ! c$http?$client_header_names )
 				c$http$client_header_names = vector();
 
-			c$http$client_header_names[|c$http$client_header_names|] = name;
+			c$http$client_header_names += name;
 
 			if ( ! c$http?$client_header_values)
 				c$http$client_header_values = vector();
 
-			c$http$client_header_values[|c$http$client_header_values|] = value;
+			c$http$client_header_values += value;
 			}
 		}
 	else
@@ -52,12 +52,12 @@ event http_header(c: connection, is_orig: bool, name: string, value: string) &pr
 			if ( ! c$http?$server_header_names )
 				c$http$server_header_names = vector();
 
-			c$http$server_header_names[|c$http$server_header_names|] = name;
+			c$http$server_header_names += name;
 
 			if ( ! c$http?$server_header_values )
 				c$http$server_header_values = vector();
 
-			c$http$server_header_values[|c$http$server_header_values|] = value;
+			c$http$server_header_values += value;
 			}
 		}
 	}
